@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Swipers : MonoBehaviour
 {
+    public GameObject hud;
     public float speed;
     private bool movingRight = true;
     public Transform wallDetection;
-    
+    public float  multi;
     float radi = 0.1f;
     public LayerMask whatIsGround;
     private void Update()
     {
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
+        multi = 0.01* hud.points;
+        transform.Translate(Vector2.right * speed * Time.deltaTime*multi);
 
          bool WallInfo = Physics2D.OverlapCircle(wallDetection.position, radi, whatIsGround);
         if(WallInfo == true)

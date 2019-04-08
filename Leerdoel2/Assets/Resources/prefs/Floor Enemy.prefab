@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 891206382}
   - component: {fileID: 891206386}
   m_Layer: 10
-  m_Name: Enemy
+  m_Name: Floor Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157194681310869738}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.647, y: 1.138, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5949542603064639694}
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64078cac07a234a4cb2cb1a8324022f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: -5
   wallDetection: {fileID: 5949542603064639694}
   whatIsGround:
     serializedVersion: 2

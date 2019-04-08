@@ -60,9 +60,19 @@ public class Player_move : MonoBehaviour
 
 
         }
-        if ((Input.GetKeyDown(KeyCode.W)) && isGrounded)
+        if ((Input.GetKeyDown(KeyCode.Space)) && isGrounded)
         {
             rb.velocity = Vector2.up * jump;
+        }
+        if (Input.GetKey(KeyCode.DownArrow)&& isGrounded)
+        {
+            transform.localScale = new Vector3(1, 0.5f, 1);
+            transform.position = new Vector3(transform.position.x,-0.25f,transform.position.z);
+        }
+        else
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+            
         }
         
         

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 891206386}
   m_Layer: 10
   m_Name: Floor Enemy
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,8 +93,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64078cac07a234a4cb2cb1a8324022f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hud: {fileID: 0}
   speed: -5
   wallDetection: {fileID: 5949542603064639694}
+  multi: 0
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256

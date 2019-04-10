@@ -8,28 +8,23 @@ public class Swipers : MonoBehaviour
     public float speed;
     private bool movingRight = true;
     public Transform wallDetection;
+    [SerializeField]
     public float  multi;
     float radi = 0.1f;
     public LayerMask whatIsGround;
+    private void Start()
+    {
+        hud = GameObject.Find("Canvas").transform.GetChild(0).gameObject;
+    }
     private void Update()
     {
-        multi = 0.01* hud.points;
+        multi = 1+ 0.00001f* hud.GetComponent<Timer>().points;
         transform.Translate(Vector2.right * speed * Time.deltaTime*multi);
 
-         bool WallInfo = Physics2D.OverlapCircle(wallDetection.position, radi, whatIsGround);
-        if(WallInfo == true)
+        if (transform.position.x <= -10.5f)
         {
-            if(movingRight == true)
-            {
-                transform.eulerAngles = new Vector3(0, -180, 0);
-                movingRight = false;
-
-            }
-            else
-            {
-                transform.eulerAngles = new Vector3(0, 0, 0);
-                movingRight = true;
-            }
+            Destroy(gameObject);
         }
+        
     }
 }

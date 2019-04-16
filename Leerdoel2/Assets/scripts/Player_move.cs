@@ -23,7 +23,7 @@ public class Player_move : MonoBehaviour
     float i_grav;
     
     public int movebuffer;
-    
+    public AudioSource source;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -63,6 +63,8 @@ public class Player_move : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.Space)) && isGrounded)
         {
             rb.velocity = Vector2.up * jump;
+            source.Play();
+
         }
         if (Input.GetKey(KeyCode.DownArrow)&& isGrounded)
         {
@@ -74,7 +76,10 @@ public class Player_move : MonoBehaviour
             transform.localScale = new Vector3(1, 1, 1);
             
         }
-        
+        if (isGrounded)
+        {
+            transform.GetChild(1).Rotate(0, 0, -2);
+        }
         
 
         if (MoveIn != 0 )
